@@ -80,6 +80,9 @@ Here, we show an example of a datagram containing options:
 * faire un script qui modifie l'email partout : 
   find * -type f -exec sed -i "s/@users.sorceforge.net/@free.fr/" '{}' \;
 	necessite au moins sed version 4.0.5
+
+  sur mac os X.13 utiliser:
+  find * -type f -exec sed -i '' -e "s/@free.fr/@orange.fr/" '{}' \;
  
 
 * decodage TOS (type of service dans IP) en mode verbeux

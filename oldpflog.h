@@ -2,7 +2,7 @@
  *
  * S.N.I.F : Sniff Network Interface's Frames
  *
- * Copyright (C) 2003  Damien MATTEI <Damien.MATTEI@free.fr>
+ * Copyright (C) 2003  Damien MATTEI <Damien.MATTEI@orange.fr>
 
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

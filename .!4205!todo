@@ -1,0 +1,43 @@
+
+
+* rajouter une option pour ne pas calculer les tcp checksum voir man tcpdump option -K
+
+
+* lire le rfc IPnG dans scratch/ et s'aider du livre de douglas corner
+ ipv6 pas utilise dasn internet et pas encore defini completement !
+
+
+* avancer ip v6 , SUP_IP6 defini lorsque support ipv6,utilise aussi dans sfutil a MAJ peut etre
+ , ip v6 pas encore bien decode dans snort (pas adresses src/dst)
+	pourquoi ipv6_defrag semble utile pour BSD ? mais peut etre aussi sur d'autres systemes
+ en tout cas la fragmentation sera dans les futures versions
+ ip V6 : la defragmentation differe de ip v4 mais ca ne concerne pas l'analyzeur de trames
+
+* continuer avec le decodage des options IP :
+
+
+	The following internet options are defined:
+
+      CLASS NUMBER LENGTH DESCRIPTION
+      ----- ------ ------ -----------
+   OK   0     0      -    End of Option list.  This option occupies only
+                          1 octet; it has no length octet.
+   OK   0     1      -    No Operation.  This option occupies only 1
+                          octet; it has no length octet.
+   TODO 0     2     11    Security.  Used to carry Security,
+                          Compartmentation, User Group (TCC), and
+                          Handling Restriction Codes compatible with DOD
+                          requirements.
+   OK   0     3     var.  Loose Source Routing.  Used to route the
+                          internet datagram based on information
+                          supplied by the source.
+   OK   0     9     var.  Strict Source Routing.  Used to route the
+                          internet datagram based on information
+                          supplied by the source.
+   OK   0     7     var.  Record Route.  Used to trace the route an
+                          internet datagram takes.
+   OK   0     8      4    Stream ID.  Used to carry the stream
+                          identifier.
+   OK   2     4     var.  Internet Timestamp.
+
+
