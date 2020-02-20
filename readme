@@ -1,6 +1,6 @@
 S.N.I.F. Version 1.0 
 
-by  Damien MATTEI (email: Damien.MATTEI@free.fr)
+by  Damien MATTEI (email: Damien.MATTEI@orange.fr)
 
 S.N.I.F. is a packet sniffer,it is the acronym of "Sniff Network Information Frames"
 
@@ -27,10 +27,14 @@ partially tested on the following systems,this means that at some point of devel
 -Linux Fedora Core 5
 -Linux Fedora Core 10
 -Linux YLD 6.0, Yellow Dog Linux, PowerPC
+-Linux Ubuntu 18.10 (Cosmic Cuttlefish)
+
 -Mac OS X.3 server (Panther),requires Xcode
 -Mac OS X.3 (Panther),requires Xcode
 -Mac OS X.4 (Tiger) Intel and PowerPC,requires Xcode v2.5
 -Mac OS X.5 (Leopard)
+-Mac OS X.13.6 (High Sierra)
+
 -FreeBSD 5.3
 
 partially supported on those systems:
@@ -82,3 +86,7 @@ This program deals with a lot of link layer protocols (network layer 2) but due 
 -Apple USB Adapter
 
 Some other link layer needs to be tested (ex: Token Ring), if you find any bug send me an email please.
+
+
+
+
