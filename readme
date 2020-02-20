@@ -1,0 +1,84 @@
+S.N.I.F. Version 1.0 
+
+by  Damien MATTEI (email: Damien.MATTEI@free.fr)
+
+S.N.I.F. is a packet sniffer,it is the acronym of "Sniff Network Information Frames"
+
+FEATURES:
+---------
+
+This program is a network frame analyzer, commonly called a packet sniffer.
+
+
+
+COMPATIBILITY:
+--------------
+
+
+partially tested on the following systems,this means that at some point of development it was working on the system but test has not always been performed on the final release:
+
+-Linux RedHat 5.2 (Apollo)
+-Linux Redhat 7.2 (Enigma)
+-Linux Redhat 7.3 (Valhalla)
+-Linux Redhat 9.0 (Shrike)
+-Linux Fedora Core 2
+-Linux Fedora Core 2 64bits
+-Linux Fedora Core 3
+-Linux Fedora Core 5
+-Linux Fedora Core 10
+-Linux YLD 6.0, Yellow Dog Linux, PowerPC
+-Mac OS X.3 server (Panther),requires Xcode
+-Mac OS X.3 (Panther),requires Xcode
+-Mac OS X.4 (Tiger) Intel and PowerPC,requires Xcode v2.5
+-Mac OS X.5 (Leopard)
+-FreeBSD 5.3
+
+partially supported on those systems:
+
+-Mac OS X.2 (Jaguar) : works with -a option due to lack of hash table support in this version of Mac os X.
+-Linux Fedora Core 6 : you will have to install the libpcap from sources before compiling
+
+
+REQUIREMENTS:
+-------------
+
+
+an UNIX operating system with Packet Capture Library (libpcap) installed.
+
+Libpcap is available from http://www.tcpdump.org/.
+
+
+
+LINUX:
+
+RPM versions of libpcap can be found at http://www.rpmfind.net and often are on contrib CDs of redhat or powertools sub-directories at ftp.redhat.com.
+
+This program should compile and run on Linux RedHat version 5 to 9 and on Linux Fedora Core 1 to 6. 
+Libpcap if not installed on your Linux RedHat system is available as RPM from ftp.redhat.com for Linux RedHat 5.2 and above.
+Earlier versions of Linux needs to install libpcap from source.
+
+
+MAC OS X (Darwin):
+
+You need the developper tools in order to compile the program. The developper tools are available from Apple web site (http://www.apple.com) or from the CDs installation disks of Mac OS X.3,DVDs of Mac OS X.4 shipped with the iMac.
+ 
+
+FreeBSD:
+
+The compilation and running of this program has been successfully tested on FreeBSD 5.3. 
+
+
+
+NETWORK:
+--------
+
+This program deals with a lot of link layer protocols (network layer 2) but due to lack of hardware access,only those media have been tested:
+-ethernet
+-wifi card (Airport card and broadcomm wireless card)
+-PPP used with RTC modem
+-loopback
+-Linux cooked sockets (3G ICON 225 device)
+-3G card ICON 225
+-Apple USB Adapter
+
+Some other link layer needs to be tested (ex: Token Ring), if you find any bug send me an email please.
