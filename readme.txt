@@ -1,6 +1,6 @@
 S.N.I.F : Seek Network Interface Frames
 
-Author: Damien MATTEI (Nice / FRANCE) , email: damien.mattei@orange.fr
+Author: Damien MATTEI (Nice / FRANCE) , email: damien_mattei@users.sourceforge.net
 
 common options:
 

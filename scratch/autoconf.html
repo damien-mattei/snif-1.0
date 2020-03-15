@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><!-- -*-html-*- --><!-- -*-hm--html-*- -->
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta site-description="Materials and Process Simulation Center software development">
+  <link rel="SHORTCUT ICON" href="http://ruby.wag.caltech.edu/Tutorials/banner.ico"><title>Autoconf Tutorials</title><!-- Changed by: Peter Meulbroek, 10-Aug-2004 -->
+    
+    
+    
+  <style type="text/css">
+    <!--
+H1 {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+H2 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+CAPTION { font-weight: bold }
+
+body {
+     color: #000000;
+     background-color: #fffff0;
+     margin-right: 20px;
+     margin-left: 20px;
+}
+		
+} /* default */
+
+TD.md { background-color: #F4F4FB; font-weight: bold; }
+TD.mdname1 { background-color: #F4F4FB; font-weight: bold; color: #602020; }
+TD.mdname { background-color: #F4F4FB; font-weight: bold; color: #602020; width: 600px; }
+DIV.groupHeader { margin-left: 16px; margin-top: 12px; margin-bottom: 6px; font-weight: bold }
+DIV.groupText { margin-left: 16px; font-style: italic; font-size: smaller }
+TD.indexkey {
+	background-color: #eeeeff;
+	font-weight: bold;
+	padding-right  : 10px;
+	padding-top    : 2px;
+	padding-left   : 10px;
+	padding-bottom : 2px;
+	margin-left    : 0px;
+	margin-right   : 0px;
+	margin-top     : 2px;
+	margin-bottom  : 2px;
+	border: 1px solid #CCCCCC;
+}
+TD.indexvalue {
+	background-color: #eeeeff;
+	font-style: italic;
+	padding-right  : 10px;
+	padding-top    : 2px;
+	padding-left   : 10px;
+	padding-bottom : 2px;
+	margin-left    : 0px;
+	margin-right   : 0px;
+	margin-top     : 2px;
+	margin-bottom  : 2px;
+	border: 1px solid #CCCCCC;
+}
+TR.memlist {
+   background-color: #f0f0f0; 
+}
+p {
+	padding-top: 1;
+	line-height: 1.5;
+}
+pre {
+	font-family: courier;
+}
+a:hover {
+text-decoration: underline;
+}
+-->
+    </style></head>
+ 
+
+
+<body>
+
+<!-- here we put a table, consisting of a 4x4 set of cells that give
+us a top banner, a left link bar, and a lower right 'body -->
+
+<table cellspacing="2" cellpadding="2" width="100%" border="0">
+  <!-- the banner -->
+  <tbody><tr align="left" valign="top" background="autoconf_files/silver.html" bgcolor="silver">
+    <td>&nbsp;</td>
+    <td>
+      <img border="1" src="autoconf_files/banner.gif" width="100%" alt="banner.gif"> 
+      <br>
+      <table>
+	<tbody><tr>
+	  <td><a href="http://ruby.wag.caltech.edu/">Home</a></td>
+	  <td><a href="http://ruby.wag.caltech.edu/">Up</a></td>
+	</tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <!-- the body -->
+  <tr align="left" valign="top">
+    <td background="autoconf_files/silver.html" bgcolor="silver" width="15%">
+      <table>
+	<tbody><tr>
+	  <td><a href="http://ruby.wag.caltech.edu/">Home</a></td>
+	</tr>
+	<tr>
+	  <td><a href="http://ruby.wag.caltech.edu/">Up</a></td>
+	</tr>
+      </tbody></table>
+    </td>
+    <td>
+
+<!--everything else is in this cell -->
+
+<h1>Autoconf and Automake tutorial</h1>
+<hr>
+
+<p>This tutorial is intended for those who want to autoconf their
+existing projects.  If your goal is to START a new autoconf-controlled
+project, I suggest you try the utility "autoproject", which sets
+things up nicely.  I guess you didn't do that, and so need this
+tutorial...</p>
+
+<p>Autoconf is meant to do three things: ease the burden of porting
+programs to different operating systems (autoconf), ease the burden of
+maintaining archaic make files (automake), and ease the burden of
+creating shared objects (libtool).  We will use a variety of programs
+to set things up.  During this tutorial remember: there are a lot of
+steps, but they are pretty easy.</p>
+
+For this tutorial, we will assume that you want to convert a project
+named "foo" to autoconf.  Shown <a href="http://ruby.wag.caltech.edu/Tutorials/auto-tutorial/step0">here</a>
+is the code, 'before' autoscanning.
+
+<h2><strong>Step 1</strong>: prepare your directory structure</h2>
+
+<p>I have some reasonable feelings on how things should be structured
+in a code base.  For example, I don't want to see source code in the
+top level directory, and I want to see subdirectories for each
+'subtopic'; things that are unique.  So, if the code is not in this
+format, do the following:</p>
+
+<ol>
+
+  <li>Create the appropriate sub-directories, including one for source
+  code (<em>src</em>), one for documentation (<em>doc</em>), and
+  one for each scripting interface (e.g., <em>python</em>)</li>
+
+  <li>Move the code to the appropriate sub-directory.  For this
+  example, we'll assume that you have directories <em>src</em>,
+  <em>python</em>, and <em>doc</em>.  Note that the doc and
+  python directories will remain empty for now...</li>
+  
+  <li>Shown <a href="http://ruby.wag.caltech.edu/Tutorials/auto-tutorial/step1">here</a> is the new
+    directory structure</li>
+  
+</ol> 
+
+<h2><strong>Step 2</strong>: scan your program for non-portable
+procedures and necessary tools</h2>
+
+<p>We will use a utility called <em>autoscan</em> to do this.  Change
+to the top level of <em>foo</em> and '<strong>autoscan</strong>'.  The
+syntax for this command is</p>
+
+<p><font face="Courier">[1] autoscan</font></p> Pretty
+straightforward..<br>
+
+<p>Autoscan creates a file called "configure.scan".  We will use this
+as the template for "configure.in" (see definitions).  Shown <a href="http://ruby.wag.caltech.edu/Tutorials/auto-tutorial/step1/configure.scan">here</a> is a 'typical'
+autoscan output.  The new directory structure is shown <a href="http://ruby.wag.caltech.edu/Tutorials/auto-tutorial/step2">here</a></p>
+
+ We have to change a few things
+in this file.  
+
+<ol>
+  <li>
+    <pre>      <code> 
+	&lt; AC_PREREQ(2.57) 
+	&lt; AC_INIT(FULL-PACKAGE-NAME, VERSION, BUG-REPORT-ADDRESS) 
+        ...  
+	&gt; AC_PREREQ(2.5) 
+	&gt; AC_INIT(tutorial, [0.02], [meulbroek@wag.caltech.edu]) 
+      </code>
+    </pre> 
+  </li> 
+  
+  <p>we change the version of autoconf that we are using from 2.57 to
+    2.5, since we don't use anything more advanced than 2.5 we also add
+    information on the name of the program, the version, and the
+    bug-report address</p>
+  
+  <li> We also need to switch macros to use automake, as in 
+    <pre>      <code>
+	&gt; AM_INIT_AUTOMAKE ...  
+	&lt; AC_CONFIG_HEADER([config.h]) 
+	&gt; AM_CONFIG_HEADER([config.h]) 
+      </code>
+      
+    </pre> 
+  </li> 
+  <p>Note that 'AC' goes to 'AM' in the above macro </p>
+  
+  <li> 
+    <pre>      <code> 
+	&gt; AC_CONFIG_FILES([Makefile 
+	&gt;                  src/Makefile]) 
+      </code>
+    </pre> 
+  </li>
+  
+  <li>Note that we also have to add two lines: We next specify a
+    target: we want configure to create machine specific makefiles for
+    us, both in the top directory and in the src directory 
+  </li> 
+
+</ol>
+
+<br> 
+
+<h2><strong>Step 3</strong>: create the Makefile.am files</h2>
+
+<p>Makefile.am files are the minimal amount of information necessary
+  to create a makefile, and hence to build our code.  This is a two part
+  procedure.  We create the top level <strong>Makefile.am</strong>
+  that allows global builds, then the <em>src</em> directory
+  <strong>Makefile.am</strong> that actually builds our targets.
+</p>
+
+<ul>
+  <li>The top level Makefile.am: This consists of one line to set up
+  the make hierarchy.  Note that we <strong>don't</strong> include the
+  <em>doc</em> and <em>python</em>directories at present, because they
+  will remain empty for this tutorial</li>
+
+  <pre><code>SUBDIRS=src</code></pre>
+	
+  <li>The src Makefile.am:  This just sets up the targets, by
+    <ol>
+      <li>creating an executable project:</li>
+
+      <pre><code>noinst_PROGRAMS=tutorial</code></pre>
+
+      <p>(note that the 'noinst' part tells automake that this is not
+      installed anywhere, and the 'PROGRAMS' part tells automake that
+      this is a stand-alone executable whose name is 'tutorial')</p>
+      
+      <li>specify the source for this project</li>
+
+      <pre><code>tutorial_SOURCES=main.c</code></pre>
+
+      <p>here, the name of the target (tutorial) is used...as of
+	yet, we only have one source file, <a href="http://ruby.wag.caltech.edu/Tutorials/auto-tutorial/step3/src/main.c">main.c</a></p>
+
+    </ol>
+  </li>
+</ul>
+
+<h2><strong>Step 4</strong>:  create the config.h.in files</h2>
+
+<p>There are two ways that autoconf/automake interact with your source
+code: the build environment variables, and preprocessor directives.
+Autoconf is concerned with building 'configure' that determines the
+former, with building 'config.h' to set up the latter.  In order to
+take advantage of autoconf, you will need to include config.h in your
+non-portable source.  We will need to create the precursor skeleton
+for this file, named appropriately enough, config.h.in (starting to
+see a pattern?)  This is done by running the utility 'autoheader', as
+in</p>
+
+<p><font face="Courier">[2] autoheader</font></p>
+
+<h2><strong>Step 5</strong>:  create the makefile.in files</h2>
+
+<p>We now need to translate the Makefile.am files we created above
+into Makefile.in files (that will be processed during the
+<em>./configure</em> procedure.  This is done by using
+<em>automake</em>, as follows</p>
+
+<p><font face="Courier">[3] aclocal &amp;&amp; automake -ac</font></p>
+
+<p>First, we note that we've slipped in an additional command,
+<strong>aclocal</strong>.  This command places the macros used in the
+configure.in and Makefile.am files from system-wide defininitions, and
+puts them in a local file <em>aclocal.m4</em>.  We do this so that the
+code can be moved to a new machine.</p>
+
+<p>Next, note the command line arguments to automake.  'a' says to add
+any missing files / scripts that the system expects, and 'c' says to
+copy them, not sim-link them (which allows the code to be built on
+other machines)</p>
+
+<p><strong>OH NO!  ERRORS</strong>.  When we run automake, it
+complains of some missing files, notably</p> 
+
+<pre>  <code> 
+    Makefile.am: required file `./NEWS' not found 
+    Makefile.am: required file `./README' not found 
+    Makefile.am: required file `./AUTHORS' not found 
+    Makefile.am: required file `./ChangeLog' not found 
+  </code>
+</pre>
+
+<p>We can create placeholders for these by using touch, as in
+
+</p><p><font face="Courier">[4] touch NEWS README AUTHORS
+ChangeLog</font></p>
+
+<h2><strong>Step 6</strong>:  run autoconf</h2>
+
+<p>Next, we are ready to turn the completed <em>configure.in</em> into
+a <em>configure</em> script by running autoconf, as in:</p>
+
+<p><font face="Courier">[5] autoconf</font></p> 
+
+<p>This should create <em>./configure</em>, which can then be run as</p>
+
+
+<h2><strong>Step 7</strong>: [6] configure and make</h2>
+
+<p><font face="Courier">./configure &amp;&amp; make</font></p>
+
+<p>This final command should build our little project on any of the
+machines we have here... </p>
+
+<!-- hhmts start -->
+Last modified: Tue Aug  3 17:45:26 PDT 2004
+<!-- hhmts end -->
+<br>
+<!-- -*-hm--html-*- --> 
+
+<!-- note: we are in the context of a table, set during the 'header'
+     template -->
+
+<hr>
+
+<center>
+  <p>© Copyright 2003 California Institute of Technology</p>
+
+  <p>comments, criticisms, and critiques to <a href="mailto://meulbroek@wag.caltech.edu">Peter Meulbroek</a>
+
+</p></center>
+
+</td>
+</tr>
+</tbody></table>
+
+</body></html>

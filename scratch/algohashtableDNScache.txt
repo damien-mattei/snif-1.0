@@ -1,0 +1,20 @@
+must respect this: 
+
+/* resolve IP in hostname and print it
+ * check before if already in the program DNS cache
+ */
+void printResolvedIP(char * addr) 
+
+first create new hash table of size n
+
+element -->  if exist then
+		print ip name
+	     else enter it in hashtable:
+
+		      if there is no place (>n) then
+			 clear,(destroy?) hash table
+			 create a new one
+			 
+		      enter it 
+
+

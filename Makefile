@@ -40,10 +40,10 @@ pkglibdir = $(libdir)/snif
 pkgincludedir = $(includedir)/snif
 top_builddir = .
 
-ACLOCAL = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run aclocal-1.6
-AUTOCONF = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run autoconf
-AUTOMAKE = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run automake-1.6
-AUTOHEADER = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run autoheader
+ACLOCAL = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run aclocal-1.6
+AUTOCONF = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run autoconf
+AUTOMAKE = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run automake-1.6
+AUTOHEADER = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run autoheader
 
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 INSTALL = /usr/bin/install -c
@@ -67,7 +67,7 @@ host_triplet = i386-apple-darwin17.7.0
 EXEEXT = 
 OBJEXT = o
 PATH_SEPARATOR = :
-AMTAR = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run tar
+AMTAR = ${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run tar
 AWK = awk
 CC = gcc
 DEPDIR = .deps
@@ -80,7 +80,7 @@ STRIP =
 VERSION = 1.0
 am__include = include
 am__quote = 
-install_sh = /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/install-sh
+install_sh = /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/install-sh
 
 AUTOMAKE_OPTIONS = foreign
 

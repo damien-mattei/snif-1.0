@@ -1,0 +1,276 @@
+/* CSS Document */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+.bodystyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+a:link {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: underline;
+}
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	background-color: #E9E9E9;
+}
+.purple  a:active {
+	color: #663399;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	font-weight: bold;
+}
+.purple  a:link {
+	color: #663399;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.purple a:visited {
+	color: #663399;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.purple  a:hover {
+	color: #FFFFFF;
+	background-color: #663399;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.green  a:active {
+	color: #2CAD56;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.green a:link {
+	color: #2CAD56;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.green a:visited {
+	color: #339966;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.green  a:hover {
+	color: #FFFFFF;
+	;
+	background-color: #2CAD56;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.orange a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF9933;
+}
+.orange a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF9933;
+}
+.orange a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF9933;
+}
+.orange a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FF9933;
+	text-decoration: none;
+}
+.blue a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0099FF;
+}
+.blue a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0099FF;
+}
+.blue a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0099FF;
+}
+.blue a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #0099FF;
+	text-decoration: none;
+}
+.red a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CC3333;
+	font-size: 12px;
+	font-weight: bold;
+}
+.red a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CC3333;
+	font-size: 12px;
+	font-weight: bold;
+}
+.red a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CC3333;
+	font-size: 12px;
+	font-weight: bold;
+}
+.red a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #CC3333;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.bottom a:active {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	text-decoration: underline;
+	font-size: 9px;
+}
+.bottom a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	text-decoration: underline;
+	font-size: 9px;
+}
+.bottom a:hover {
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	background-color: #000066;
+	text-decoration: none;
+}
+
+.purpletext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #663399;
+	font-size: 12px;
+	font-weight: bold;
+}
+.bluetext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0099ff;
+	font-size: 12px;
+	font-weight: bold;
+}
+.greentext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #2CAD56;
+	font-size: 12px;
+	font-weight: bold;
+}
+.orangetext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ff9933;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.bottomtext {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 9px;
+}
+
+.blacktext {
+	
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 12px;
+}
+.blackitalic {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-style: italic;
+}
+.blackbold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #000000;
+}
+.blacksmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.bluetextbig {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #0099ff;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.title1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FF0000;
+	font-size: 24px;
+	font-weight: bold;
+}
+.title2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #3399FF;
+	font-size: 17px;
+	font-weight: bold;
+}
+.title3 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #663399;
+	font-size: 14px;
+	font-weight: bold;
+}
+.title4 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #3399FF;
+	font-size: 13px;
+}
+
+

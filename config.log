@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 16.00 gigabytes
-Default processor set: 294 tasks, 1483 threads, 8 processors
-Load average: 1.88, Mach factor: 6.10
+Default processor set: 295 tasks, 1110 threads, 8 processors
+Load average: 2.12, Mach factor: 5.87
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -479,8 +479,8 @@ configure:4872: checking for hcreate_r
 configure:4922: gcc -o conftest -g -O2 -Wall    conftest.c -lpcap  >&5
 Undefined symbols for architecture x86_64:
   "_hcreate_r", referenced from:
-      _main in conftest-514eda.o
-      _f in conftest-514eda.o
+      _main in conftest-2ae136.o
+      _f in conftest-2ae136.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:4925: $? = 1
@@ -712,6 +712,7 @@ on albedo-2.home
 config.status:660: creating Makefile
 config.status:660: creating sfutil/Makefile
 config.status:764: creating config.h
+config.status:897: config.h is unchanged
 config.status:1003: executing depfiles commands
 
 ## ---------------- ##
@@ -785,14 +786,14 @@ am_cv_prog_cc_stdc=
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run aclocal-1.6'
+ACLOCAL='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run aclocal-1.6'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
-AMTAR='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run tar'
-AUTOCONF='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run autoconf'
-AUTOHEADER='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run autoheader'
-AUTOMAKE='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run automake-1.6'
+AMTAR='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run tar'
+AUTOCONF='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run autoconf'
+AUTOHEADER='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run autoheader'
+AUTOMAKE='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run automake-1.6'
 AWK='awk'
 CC='gcc'
 CCDEPMODE='depmode=gcc3'
@@ -814,7 +815,7 @@ LDFLAGS=''
 LIBOBJS=''
 LIBS='-lpcap '
 LTLIBOBJS=''
-MAKEINFO='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/missing --run makeinfo'
+MAKEINFO='${SHELL} /Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/missing --run makeinfo'
 OBJEXT='o'
 PACKAGE='snif'
 PACKAGE_BUGREPORT=''
@@ -848,7 +849,7 @@ host_os='darwin17.7.0'
 host_vendor='apple'
 includedir='${prefix}/include'
 infodir='${prefix}/info'
-install_sh='/Volumes/Mojave/Users/mattei/Dropbox/snif-1.0/install-sh'
+install_sh='/Volumes/Mojave/Users/mattei/Dropbox/git/snif-1.0/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localstatedir='${prefix}/var'
